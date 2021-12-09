@@ -78,13 +78,13 @@
             android:layout_margin="10dp"
             android:text="Choose to" />
         <Button
-            android:id="@+id/Bat"
+            android:id="@+id/Bat_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bat" />
 
         <Button
-            android:id="@+id/Bowl"
+            android:id="@+id/Bowl_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bowl" />
