@@ -4,12 +4,13 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(tableName = "game_table")
 @TypeConverters({Convertor.class})
 public class Game {
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     public int id;
 
     public List<Team> teams;
@@ -38,5 +39,15 @@ public class Game {
         this.nonStriker = nonStriker;
         this.bowler = bowler;
         this.overBalls = overBalls;
+        this.id = 0; // only one game
+    }
+
+    public Game() {
+        id = 0;
+        inning = Inning.FIRST;
+        overBalls = new ArrayList<>();
+        teams = new ArrayList<>();
+        teams.add(new Team());
+        teams.add(new Team());
     }
 }

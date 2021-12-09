@@ -19,12 +19,12 @@ public interface GameDao {
     @Update
     void updateGame(Game game);
 
-    @Delete
-    void deleteGame(Game game);
+    @Query("DELETE FROM game_table")
+    void deleteGame();
 
     @Query("SELECT * FROM game_table")
     LiveData<List<Game>> getAllGames();
 
-    @Query("SELECT * FROM game_table WHERE game_table.id = (SELECT MAX(b.id) FROM game_table as b)")
-    LiveData<Game> getLastGame();
+    @Query("SELECT * FROM game_table WHERE game_table.id = 0")
+    LiveData<Game> getGame();
 }

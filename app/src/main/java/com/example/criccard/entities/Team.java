@@ -1,5 +1,7 @@
 package com.example.criccard.entities;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Team {
@@ -11,6 +13,8 @@ public class Team {
     public Team() {
         totalOvers = 0.0f;
         totalRuns = 0;
+        players = new ArrayList<>();
+        playEndedPlayers = new ArrayList<>();
     }
     // used to initialize new players id
     // id can be used as their number
