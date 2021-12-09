@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CricCard">
         <activity
+            android:name=".TeamList"
+            android:exported="false" />
+        <activity
             android:name=".Toss"
             android:exported="false" />
         <activity
