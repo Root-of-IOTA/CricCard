@@ -13,9 +13,12 @@ public class Player {
     public float scoreRate;
     public String outReason;
     public Player bowler;
+    public int maiden;
+    public int bowlingRuns;
 
     public Player(int id, String name, int runs, int fours, int sixes, int balls,
-                  int wickets, float economy, float overs, float scoreRate, String outReason, Player bowler) {
+                  int wickets, float economy, float overs, float scoreRate, String outReason,
+                  Player bowler,int maiden, int bowlingRuns) {
         this.id = id;
         this.name = name;
         this.runs = runs;
@@ -28,6 +31,8 @@ public class Player {
         this.scoreRate = scoreRate;
         this.outReason = outReason;
         this.bowler = bowler;
+        this.maiden = maiden;
+        this.bowlingRuns = bowlingRuns;
     }
 
     public Player(int id, String name) {
