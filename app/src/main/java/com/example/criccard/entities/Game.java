@@ -6,9 +6,6 @@ import androidx.room.TypeConverters;
 
 import java.util.List;
 
-enum PlayChoice {BATTING, BOWLING}
-enum Inning {FIRST,SECOND}
-
 @Entity(tableName = "game_table")
 @TypeConverters({Convertor.class})
 public class Game {
