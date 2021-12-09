@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Toss">
 
     <LinearLayout
-        android:id="@+id/TeamTitle"
+        android:id="@id/TeamTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Team1"
+            android:id="@id/Team1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="38dp"
@@ -31,7 +31,7 @@
             android:text="VS" />
 
         <TextView
-            android:id="@+id/Team2"
+            android:id="@id/Team2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="38dp"
@@ -46,27 +46,50 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/TeamTitle"
         android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Toss Won By : " />
+        <TextView
+            android:id="@+id/Toss_won_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TeamTitle"
+        android:gravity="center"
+        android:layout_margin="30dp"
         android:orientation="vertical">
-
-        <Button
-            android:id="@+id/edit_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/confirm_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Auto Toss After Confirm" />
+            android:text="Choose to" />
+        <Button
+            android:id="@+id/Bat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bat" />
+
+        <Button
+            android:id="@+id/Bowl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bowl" />
+
+
 
     </LinearLayout>
-
-
 </RelativeLayout>
