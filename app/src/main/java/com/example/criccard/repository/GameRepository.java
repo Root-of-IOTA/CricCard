@@ -22,7 +22,7 @@ public class GameRepository {
     private SharedPreferences.Editor editor;
     private final String SHARED_PREF = "com.example.criccard";
 
-    GameRepository(Application application) {
+    public GameRepository(Application application) {
         GameDatabase db = GameDatabase.getInstance(application);
         dao = db.gameDao();
         game = dao.getGame();
@@ -35,21 +35,15 @@ public class GameRepository {
 
     public LiveData<Game> getGame() { return game; }
     public void update(Game game) {
-        es.submit(() -> {
-            dao.updateGame(game);
-        });
+        es.submit(() -> dao.updateGame(game));
     }
 
     public void insert(Game game) {
-        es.submit(() -> {
-            dao.insertGame(game);
-        });
+        es.submit(() -> dao.insertGame(game));
     }
 
     public void delete() {
-        es.submit(() -> {
-            dao.deleteGame();
-        });
+        es.submit(() -> dao.deleteGame());
     }
 
     public void newGame() {
