@@ -50,4 +50,23 @@ public class Game {
         teams.add(new Team());
         teams.add(new Team());
     }
+
+    public Team getBattingTeam() {
+        Team t;
+        if(inning == Inning.FIRST && oversBowled < totalOvers) {
+            if (tossWonTeamChose == PlayChoice.BATTING) t =  teams.get(tossWonByTeam);
+            else t = teams.get(tossWonByTeam == 0 ? 1 : 0);
+        } else {
+            if (tossWonTeamChose == PlayChoice.BATTING) t = teams.get(tossWonByTeam == 0 ? 1 : 0);
+            else t =  teams.get(tossWonByTeam);
+        }
+        return t;
+    }
+
+    public void setBatters() {
+        Team t = getBattingTeam();
+        // TODO: remaining logic for striker and non striker setting from player list of the team
+    }
+
+    //todo: other function like wicket, run, over, ball updation needed to be completed
 }

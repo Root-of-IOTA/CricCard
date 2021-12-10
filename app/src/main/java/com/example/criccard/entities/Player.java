@@ -1,9 +1,9 @@
 package com.example.criccard.entities;
 
 public class Player {
-    public int id;
+    public int id; // number for the player
     public String name;
-    public int runs;
+    public int runs; // runs scored on batting
     public int fours;
     public int sixes;
     public int balls;
@@ -13,12 +13,13 @@ public class Player {
     public float scoreRate;
     public String outReason;
     public Player bowler;
+    public Player fielder;
     public int maiden;
-    public int bowlingRuns;
+    public int bowlingRuns; // runs given during bowling
 
     public Player(int id, String name, int runs, int fours, int sixes, int balls,
                   int wickets, float economy, float overs, float scoreRate, String outReason,
-                  Player bowler,int maiden, int bowlingRuns) {
+                  Player bowler, Player fielder,int maiden, int bowlingRuns) {
         this.id = id;
         this.name = name;
         this.runs = runs;
@@ -33,6 +34,7 @@ public class Player {
         this.bowler = bowler;
         this.maiden = maiden;
         this.bowlingRuns = bowlingRuns;
+        this.fielder = fielder;
     }
 
     public Player(int id, String name) {
@@ -47,6 +49,15 @@ public class Player {
         this.overs = 0.0f;
         this.scoreRate = 0.0f;
         this.bowler = null;
+        this.fielder = null;
+    }
+
+    public void updateScoreRate() {
+        scoreRate = ((float) runs )/ balls;
+    }
+
+    public void updateEconomy() {
+        economy = ((float) bowlingRuns) / overs;
     }
 
 }

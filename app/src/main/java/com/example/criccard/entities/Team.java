@@ -21,4 +21,44 @@ public class Team {
     public int getNextPlayerId() {
         return players.size() + playEndedPlayers.size() + 1;
     }
+
+    public void addPlayer(String name) {
+        players.add(new Player(getNextPlayerId(), name));
+    }
+
+    // when a wicket happens use this function to change the player from players list to playEndedPlayers list
+    public void playerWicket(Player player, String outReason, Player bowler, Player fielder) {
+        player.outReason = outReason;
+        player.bowler = bowler;
+        player.fielder = fielder;
+        player.updateScoreRate();
+        playEndedPlayers.add(player);
+        players.remove(player);
+    }
+
+    // automatically goes over the player list and updates the total run
+    // note: run increment on player object must be done manually
+    public void updateTotalRuns() {
+        int runs = 0;
+        for(Player p: players) {
+            runs += p.runs;
+        }
+        for(Player p: playEndedPlayers) {
+            runs += p.runs;
+        }
+        this.totalRuns = runs;
+    }
+
+    // automatically goes over the player list and updates the total overs
+    // note: over increment on player object must be done manually
+    public void updateTotalOvers() {
+        int overs = 0;
+        for(Player p: players) {
+            overs += p.overs;
+        }
+        for(Player p: playEndedPlayers) {
+            overs += p.overs;
+        }
+        this.totalOvers = overs;
+    }
 }
